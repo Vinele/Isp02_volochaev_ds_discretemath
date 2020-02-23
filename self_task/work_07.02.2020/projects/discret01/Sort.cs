@@ -4,6 +4,12 @@ namespace Discret01
 {
     class Sort
     {
+        public static void Swap (ref int index01, ref int index02)
+        {
+            int tmp = index01;
+            index01 = index02;
+            index02 = tmp;
+        }
         public static void Bubble(int[] array)
         {
             if (array == null || array.Length < 2)
@@ -16,10 +22,7 @@ namespace Discret01
                 {
                     if (array[index] < array[index + 1])
                     {
-                        int tmp = array[index];
-                        array[index] = array[index + 1];
-                        array[index + 1] = tmp;
-
+                        Swap(ref array[index], ref array[index + 1]);
                         swapDetected = true;
                     }
                 }
